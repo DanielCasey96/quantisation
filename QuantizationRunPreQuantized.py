@@ -2,7 +2,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def main():
-    model_path = "models/llama2-7b-chat-3bit-custom"
+    model_path = "models/gemma-7b-it-2bit-custom"
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
     # Load model and tokenizer
