@@ -14,9 +14,21 @@ def load_model_quantized(model_path, quantization_level="none"):
     use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     dtype = torch.bfloat16 if use_bf16 else torch.float16
 
-    quantization_config = None
-    if quantization_level == "8bit":
-        # Keep the whole model on GPU; no CPU offload
+    if quantization_level == "2bit":
+        # Try to load pre-quantized 2-bit model, fallback to custom
+        try:
+            model = AutoModelForCausalLM.from_pretrained(
+                "models/mistral-7b-2bit-custom",
+                device_map="auto",
+                torch_dtype=torch.float16
+            )
+            print("✅ Loaded pre-quantized 2-bit model")
+            return model
+        except:
+            print("Pre-quantized 2-bit not found, using custom 2-bit")
+            return load_custom_2bit(model_path)
+
+    elif quantization_level == "8bit":
         quantization_config = BitsAndBytesConfig(load_in_8bit=True)
     elif quantization_level == "4bit":
         quantization_config = BitsAndBytesConfig(
@@ -25,16 +37,46 @@ def load_model_quantized(model_path, quantization_level="none"):
             bnb_4bit_use_double_quant=True,
             bnb_4bit_compute_dtype=dtype,
         )
+    else:  # "none" - 16bit
+        quantization_config = None
 
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
         quantization_config=quantization_config,
-        device_map="cuda" if torch.cuda.is_available() else "cpu",  # avoid CPU offload
-        dtype=dtype,  # replaces deprecated torch_dtype
+        device_map="auto",
+        dtype=dtype,
         trust_remote_code=True,
-        # Uncomment if flash-attn 2 is installed:
-        # attn_implementation="flash_attention_2",
     )
+    model.eval()
+    return model
+
+def load_custom_2bit(model_path):
+    """Apply custom 2-bit quantization on the fly"""
+    print("Applying custom 2-bit quantization...")
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path,
+        device_map="auto",
+        torch_dtype=torch.float16,
+        trust_remote_code=True,
+    )
+
+    # Apply simple 2-bit quantization to linear layers
+    for name, module in model.named_modules():
+        if hasattr(module, 'weight') and module.weight is not None:
+            with torch.no_grad():
+                weights = module.weight.data
+                # 2-bit quantization: 4 levels (0, 1, 2, 3)
+                min_val = weights.min()
+                max_val = weights.max()
+                scale = (max_val - min_val) / 3  # 2-bit has 4 values: 0,1,2,3
+
+                # Quantize to nearest integer
+                quantized = torch.round((weights - min_val) / scale)
+                quantized = torch.clamp(quantized, 0, 3)
+
+                # Dequantize back for inference
+                module.weight.data = quantized * scale + min_val
+
     model.eval()
     return model
 
@@ -81,27 +123,32 @@ def test_simple_inference(model, tokenizer):
     return responses
 
 if __name__ == "__main__":
-    model_path = "models/llama2-7b-chat"
+    # Test with Mistral since we have 2-bit for it
+    model_path = "models/mistral-7b"
 
     print("System Check")
     check_cuda()
 
     print("\nTesting Quantization Levels")
 
-    # On a 16 GB GPU, prefer 4bit or 8bit to keep everything on-GPU.
-    for quant_level in ["4bit", "8bit", "none"]:
-        print(f"\nTesting {quant_level} quantization ")
+    # Test all quantization levels including 2-bit
+    for quant_level in ["2bit", "4bit", "8bit", "none"]:
+        print(f"\n=== Testing {quant_level} quantization ===")
         try:
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
 
             model = load_model_quantized(model_path, quant_level)
-            memory_used = test_memory_usage(model, f"Gemma-7B ({quant_level})")
+            memory_used = test_memory_usage(model, f"Mistral-7B ({quant_level})")
 
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
 
-            response = test_simple_inference(model, tokenizer)
-            print(f"Test response: {response}")
+            responses = test_simple_inference(model, tokenizer)
+            print(f"Generated {len(responses)} responses")
+
+            # Print first response as sample
+            if responses:
+                print(f"Sample response: {responses[0][:200]}...")
 
             del model
             if torch.cuda.is_available():
