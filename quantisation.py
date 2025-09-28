@@ -53,19 +53,31 @@ def test_memory_usage(model, model_name):
     return memory_allocated
 
 def test_simple_inference(model, tokenizer):
-    input_text = "The capital of France is"
-    inputs = tokenizer(input_text, return_tensors="pt")
-
-    if torch.cuda.is_available():
-        inputs = inputs.to(model.device)
-
-    with torch.no_grad():
-        outputs = model.generate(**inputs, max_length=20, do_sample=False)
-        response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        return response
+    prompts = [
+        "Solve step by step: (15 × 8) + (72 ÷ 6) - 13 =",
+        "Name the author who wrote 'One Hundred Years of Solitude' and their country of origin.",
+        "Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.",
+        "Explain the subtle difference between 'happy,' 'joyful,' and 'ecstatic' with examples.",
+        "Write a Python function that reverses a string without using built-in reverse methods.",
+        "If today is March 15, 2024, what day of the week will April 10, 2024 be?",
+        "Complete the analogy: Thermometer is to temperature as barometer is to ______.",
+        "Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?",
+        "If all humans are mortal, and Socrates is human, what can we conclude about Socrates?",
+        "Write a short paragraph describing a sunset over the ocean, using vivid sensory details."
+    ]
+    responses = []
+    for input_text in prompts:
+        inputs = tokenizer(input_text, return_tensors="pt")
+        if torch.cuda.is_available():
+            inputs = inputs.to(model.device)
+        with torch.no_grad():
+            outputs = model.generate(**inputs, max_new_tokens=100, do_sample=False)
+            response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            responses.append(response)
+    return responses
 
 if __name__ == "__main__":
-    model_path = "models/mistral-7b"
+    model_path = "models/gemma-7b-it"
     # Gemma downloaded, waiting on Meta approval
 
     print("System Check")
