@@ -81,12 +81,12 @@ def test_2bit_model():
     # Run full test if model works
     print("\n--- Running full test suite ---")
     prompts = [
-        "Solve step by step: (15 × 8) + (72 ÷ 6) - 13 =",
-        "Name the author who wrote 'One Hundred Years of Solitude' and their country of origin.",
+        "Solve this problem: (15 × 8) + (72 ÷ 6) - 13 =",
+        "Name the author who wrote 'Game of Thrones' and their height.",
         "Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.",
-        "Explain the subtle difference between 'happy,' 'joyful,' and 'ecstatic' with examples.",
-        "Write a Python function that reverses a string without using built-in reverse methods.",
-        "If today is March 15, 2024, what day of the week will April 10, 2024 be?",
+        "What is love?",
+        "Write a Java function that reverses a string without using built-in reverse methods.",
+        "If on the day my sister is born im double her age, how old am i when she is 50?",
         "Complete the analogy: Thermometer is to temperature as barometer is to ______.",
         "Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?",
         "If all humans are mortal, and Socrates is human, what can we conclude about Socrates?",

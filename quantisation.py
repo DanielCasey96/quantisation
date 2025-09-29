@@ -14,21 +14,7 @@ def load_model_quantized(model_path, quantization_level="none"):
     use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     dtype = torch.bfloat16 if use_bf16 else torch.float16
 
-    if quantization_level == "2bit":
-        # Try to load pre-quantized 2-bit model, fallback to custom
-        try:
-            model = AutoModelForCausalLM.from_pretrained(
-                "models/mistral-7b-2bit-custom",
-                device_map="auto",
-                torch_dtype=torch.float16
-            )
-            print("✅ Loaded pre-quantized 2-bit model")
-            return model
-        except:
-            print("Pre-quantized 2-bit not found, using custom 2-bit")
-            return load_custom_2bit(model_path)
-
-    elif quantization_level == "8bit":
+    if quantization_level == "8bit":
         quantization_config = BitsAndBytesConfig(load_in_8bit=True)
     elif quantization_level == "4bit":
         quantization_config = BitsAndBytesConfig(
@@ -43,39 +29,10 @@ def load_model_quantized(model_path, quantization_level="none"):
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
         quantization_config=quantization_config,
-        device_map="auto",
-        dtype=dtype,
+        device_map="cuda",
+        torch_dtype=dtype,
         trust_remote_code=True,
     )
-    model.eval()
-    return model
-
-def load_custom_2bit(model_path):
-    """Apply custom 2-bit quantization on the fly"""
-    print("Applying custom 2-bit quantization...")
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        device_map="auto",
-        torch_dtype=torch.float16,
-        trust_remote_code=True,
-    )
-
-    # Apply simple 2-bit quantization to linear layers
-    for name, module in model.named_modules():
-        if hasattr(module, 'weight') and module.weight is not None:
-            with torch.no_grad():
-                weights = module.weight.data
-                # 2-bit quantization: 4 levels (0, 1, 2, 3)
-                min_val = weights.min()
-                max_val = weights.max()
-                scale = (max_val - min_val) / 3  # 2-bit has 4 values: 0,1,2,3
-
-                # Quantize to nearest integer
-                quantized = torch.round((weights - min_val) / scale)
-                quantized = torch.clamp(quantized, 0, 3)
-
-                # Dequantize back for inference
-                module.weight.data = quantized * scale + min_val
 
     model.eval()
     return model
@@ -94,15 +51,15 @@ def test_memory_usage(model, model_name):
 def test_simple_inference(model, tokenizer):
     tokenizer.pad_token = tokenizer.eos_token
     prompts = [
-        "Solve step by step: (15 × 8) + (72 ÷ 6) - 13 =",
-        "Name the author who wrote 'One Hundred Years of Solitude' and their country of origin.",
+        "Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 =",
+        "Name the author who wrote 'Game of Thrones' and their height.",
         "Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.",
-        "Explain the subtle difference between 'happy,' 'joyful,' and 'ecstatic' with examples.",
-        "Write a Python function that reverses a string without using built-in reverse methods.",
-        "If today is March 15, 2024, what day of the week will April 10, 2024 be?",
+        "What is love?",
+        "Write a Java function that reverses a string without using built-in reverse methods.",
+        "If on the day my sister is born im double her age, how old am i when she is 50?",
         "Complete the analogy: Thermometer is to temperature as barometer is to ______.",
         "Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?",
-        "If all humans are mortal, and Socrates is human, what can we conclude about Socrates?",
+        "My name is Daniel, what is my name?",
         "Write a short paragraph describing a sunset over the ocean, using vivid sensory details."
     ]
     responses = []
@@ -113,17 +70,18 @@ def test_simple_inference(model, tokenizer):
                 inputs = {k: v.to(model.device) for k, v in inputs.items()}
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=100,
+                max_new_tokens=500,
                 do_sample=False,
                 eos_token_id=tokenizer.eos_token_id,
                 pad_token_id=tokenizer.eos_token_id,
                 use_cache=True,
             )
             responses.append(tokenizer.decode(outputs[0], skip_special_tokens=True))
+    for i, response in enumerate(responses):
+        print(f"Prompt {i+1}: {response[:600]}...")
     return responses
 
 if __name__ == "__main__":
-    # Test with Mistral since we have 2-bit for it
     model_path = "models/mistral-7b"
 
     print("System Check")
@@ -131,8 +89,7 @@ if __name__ == "__main__":
 
     print("\nTesting Quantization Levels")
 
-    # Test all quantization levels including 2-bit
-    for quant_level in ["2bit", "4bit", "8bit", "none"]:
+    for quant_level in ["none", "8bit", "4bit"]:
         print(f"\n=== Testing {quant_level} quantization ===")
         try:
             if torch.cuda.is_available():
@@ -146,7 +103,6 @@ if __name__ == "__main__":
             responses = test_simple_inference(model, tokenizer)
             print(f"Generated {len(responses)} responses")
 
-            # Print first response as sample
             if responses:
                 print(f"Sample response: {responses[0][:200]}...")
 

@@ -1,0 +1,560 @@
+16 Bit
+Mistral-7B (none) - Memory allocated: 13.49 GB
+Mistral-7B (none) - Memory reserved: 13.50 GB
+
+Prompt 1: Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 = ?
+
+## Answer
+
+100
+To Keep Reading This Answer, Download the App
+4.6
+To Keep Reading This Answer, Download the App
+4.6
+
+## Solution
+
+Given:
+(15 × 8) + (72 ÷ 6) - 13 = ?
+
+Calculation:
+(15 × 8) + (72 ÷ 6) - 13
+= (120 + 12) - 13
+= 132 - 13
+= 119
+
+Therefore, the value of the given expression is 119.
+
+To Keep Reading This Solution, Download the APP
+4.6
+To Keep Reading This Solution, Download the APP
+4.6
+Correct1
+Incorrect0
+
+###### Watch More Related Solutions
+
+Load More...
+Prompt 2: Name the author who wrote 'Game of Thrones' and their height.
+
+# Game of Thrones
+
+Game of Thrones is a fantasy drama television series created by David Benioff and D. B. Weiss. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is titled A Game of Thrones. It is set on the fictional continents of Westeros and Essos at the end of a decade-long summer, and focuses on three principal storylines. The first storyline is about the Stark family, nobles in the north of Westeros. The second storyline revolves around the Lannisters, who are ...
+Prompt 3: Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.
+
+## What are the 5 steps to making coffee?
+
+The 5 Steps to Making Coffee
+
+1. Step 1: Grind the Beans.
+2. Step 2: Heat the Water.
+3. Step 3: Add the Grounds.
+4. Step 4: Brew the Coffee.
+5. Step 5: Enjoy Your Coffee.
+
+## What are the 4 steps to making coffee?
+
+The 4 Steps to Making Coffee
+
+- Step 1: Grind the Beans.
+- Step 2: Heat the Water.
+- Step 3: Add the Grounds.
+- Step 4: Brew the Coffee.
+
+## What are the 3 steps to making coffee?
+
+The 3 Steps to Making Coffee
+
+- Step 1: Grind the Bean...
+Prompt 4: What is love?
+
+It’s a question that has been asked for centuries, and one that has no easy answer. Love is a complex emotion that can be felt in many different ways. It can be a deep, abiding affection for another person, or it can be a fleeting infatuation. It can be a source of great joy, or it can be a source of great pain.
+
+Love is often associated with romance, but it can also be found in other areas of life. It can be felt for a friend, a family member, or even a pet. Love is a powerful emotion that can change the way we see the world.
+
+So, what is love? It’s a question that will likely ...
+Prompt 5: Write a Java function that reverses a string without using built-in reverse methods.
+
+```
+public static String reverse(String str) {
+    String reversed = "";
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversed += str.charAt(i);
+    }
+    return reversed;
+}
+```
+
+Write a Java function that reverses a string without using built-in reverse methods.
+
+```
+public static String reverse(String str) {
+    String reversed = "";
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversed += str.charAt(i);
+    }
+    return reversed;
+}
+```
+
+Write a Java function that reverses a string...
+Prompt 6: If on the day my sister is born im double her age, how old am i when she is 50?
+
+Answer:
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister ...
+Prompt 7: Complete the analogy: Thermometer is to temperature as barometer is to ______.
+
+A. pressure
+B. weather
+C. air
+D. wind
+
+Random Topics:
+Adjectives and AdverbsPronounsPast Simple Tense
+
+Other quiz: Adjectives and Adverbs
+
+The adjective ______ is used to describe a person who is very intelligent.
+
+A. smart
+B. intelligent
+C. clever
+D. wise...
+Prompt 8: Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?
+
+The answer is no. The statement is not contradictory.
+
+The statement is not contradictory because the word 'loudly' is an adverb. It is not a verb.
+
+The word 'played' is a verb.
+
+The word 'loudly' is an adverb. It is not a verb.
+
+The word 'all' is an adverb. It is not a verb.
+
+The word 'night' is a noun. It is not a verb.
+
+The word 'orchestra' is a noun. It is not a verb.
+
+The word 'silent' is an adjective. It is not a verb.
+
+The word 'the' is an article. It is not a verb.
+
+The word 'is' is a verb.
+
+T...
+Prompt 9: My name is Daniel, what is my name?
+
+I am a 20 year old student from the Netherlands. I am currently studying at the University of Amsterdam, where I am in my second year of the Bachelor of Arts in International Relations.
+
+I am a very curious person, and I am always looking for new things to learn. I am interested in a wide variety of topics, such as politics, history, philosophy, and psychology. I am also very interested in languages, and I am currently learning Spanish and German.
+
+I am a very social person, and I enjoy spending time with my friends and family. I am also very active, and I ...
+Prompt 10: Write a short paragraph describing a sunset over the ocean, using vivid sensory details.
+
+The sun was setting over the ocean, casting a warm glow over the waves. The sky was a brilliant shade of orange, and the clouds were a soft pink. The water was calm and still, reflecting the colors of the sky. The air was warm and humid, and the salty smell of the ocean filled my nostrils. The sound of the waves crashing against the shore was soothing and peaceful. As the sun sank lower in the sky, the colors became more intense, and the sky turned a deep purple. The clouds turned a dark gray, and the wat...
+
+8 Bit
+Mistral-7B (8bit) - Memory allocated: 7.00 GB
+Mistral-7B (8bit) - Memory reserved: 7.13 GB
+
+Prompt 1: Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 = ?
+
+## Answer
+
+100
+To Keep Reading This Answer, Download the App
+4.6
+To Keep Reading This Answer, Download the App
+4.6
+
+## Solution
+
+Given:
+(15 × 8) + (72 ÷ 6) - 13 = ?
+
+Calculation:
+(15 × 8) + (72 ÷ 6) - 13
+= (120) + (12) - 13
+= 132 - 13
+= 120
+
+Therefore, the value of the given expression is 120.
+
+To Keep Reading This Solution, Download the APP
+4.6
+To Keep Reading This Solution, Download the APP
+4.6
+Correct4
+Incorrect0
+
+###### Watch More Related Solutions
+
+Load More...
+Prompt 2: Name the author who wrote 'Game of Thrones' and their height.
+
+Name the author who wrote 'Game of Thrones' and their height.
+
+# George R. R. Martin
+
+George R. R. Martin is an American author and screenwriter. He is best known for his series of epic fantasy novels, A Song of Ice and Fire, which was later adapted into the HBO series Game of Thrones.
+
+## Family
+
+### Parents & Siblings
+
+George R. R. Martin’s mother is Margaret Brady Martin.
+
+George R. R. Martin’s father is Raymond Collins Martin.
+
+## Net Worth
+
+George R. R. Martin is an American author and screenwriter who has a net worth of $100 ...
+Prompt 3: Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.
+
+## How do you make coffee step by step?
+
+How to Make Coffee
+
+1. Step 1: Grind the Beans. …
+2. Step 2: Heat the Water. …
+3. Step 3: Add the Grounds. …
+4. Step 4: Stir and Steep. …
+5. Step 5: Strain and Serve.
+
+## What are the 5 steps to making coffee?
+
+The 5 Steps to Making Coffee
+
+- Step 1: Grind the Beans. …
+- Step 2: Heat the Water. …
+- Step 3: Add the Grounds. …
+- Step 4: Stir and Steep. …
+- Step 5: Strain and Serve.
+
+## What are the 4 steps to making coffee?
+
+The 4 Steps to Making Cof...
+Prompt 4: What is love?
+
+It’s a question that has been asked for centuries, and one that has no easy answer. Love is a complex emotion that can be felt in many different ways. It can be a deep, abiding affection for another person, or it can be a fleeting infatuation. It can be a source of great joy, or it can be a source of great pain.
+
+Love is often associated with romance, but it can also be found in other areas of life. It can be felt for a friend, a family member, or even a pet. Love is a powerful force that can change the course of a person’s life.
+
+There is no one definition of love that fits all...
+Prompt 5: Write a Java function that reverses a string without using built-in reverse methods.
+
+```
+public static String reverse(String str) {
+    String reversed = "";
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversed += str.charAt(i);
+    }
+    return reversed;
+}
+```
+
+Write a Java function that reverses a string without using built-in reverse methods.
+
+```
+public static String reverse(String str) {
+    String reversed = "";
+    for (int i = str.length() - 1; i >= 0; i--) {
+        reversed += str.charAt(i);
+    }
+    return reversed;
+}
+```
+
+Write a Java function that reverses a string...
+Prompt 6: If on the day my sister is born im double her age, how old am i when she is 50?
+
+Answer:
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister is born im double her age, how old am i when she is 50?
+
+If on the day my sister ...
+Prompt 7: Complete the analogy: Thermometer is to temperature as barometer is to ______.
+
+# Pressure
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is the force per unit area.
+
+Pressure is th...
+Prompt 8: Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?
+
+The answer is no. The statement is not contradictory.
+
+The reason is that the word 'orchestra' is ambiguous. It can mean either the group of musicians or the place where they play.
+
+If we take the first meaning, then the statement is true. The musicians were silent, but the music they played was loud.
+
+If we take the second meaning, then the statement is also true. The musicians were silent, but the place where they played was loud.
+
+The statement is not contradictory because it is not clear which mea...
+Prompt 9: My name is Daniel, what is my name?
+
+I am a 20 year old student from the Netherlands. I am currently studying at the University of Amsterdam, where I am in my second year of the bachelor’s program in Psychology.
+
+I am a very curious person, and I am always looking for new things to learn. I am interested in a wide variety of topics, such as psychology, philosophy, and science. I am also a big fan of music, and I love to listen to all kinds of different genres.
+
+I am a very social person, and I love to meet new people and make new friends. I am also very outgoing, and I love to go out and have ...
+Prompt 10: Write a short paragraph describing a sunset over the ocean, using vivid sensory details.
+
+The sun was setting over the ocean, casting a warm glow over the waves. The sky was a brilliant shade of orange, and the clouds were a soft pink. The water was calm and still, reflecting the colors of the sky. The air was warm and humid, and the salty breeze carried the scent of the sea. The sound of the waves crashing against the shore was soothing and peaceful. It was a beautiful sight to behold, and I felt a sense of peace and tranquility as I watched the sun set over the ocean....
+
+4bit
+Mistral-7B (4bit) - Memory allocated: 3.85 GB
+Mistral-7B (4bit) - Memory reserved: 6.74 GB
+
+Prompt 1: Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 = ?
+
+### Guidance
+
+In this concept, we will learn how to solve equations with variables on both sides of the equation.
+
+#### Example A
+
+Solve for x: $x+10=15$
+
+Solution:
+
+| Step 1: Subtract 10 from both sides. | $x+10-10=15-10$ |
+| Step 2: Simplify. | $x=5$ |
+
+#### Example B
+
+Solve for x: $x-10=15$
+
+Solution:
+
+| Step 1: Add 10 to both sides. | $x-10+10=15+10$ |
+| Step 2: Simplify. | $x=25$ |
+
+#### Example C
+
+Solve for x: $x+10=15$
+
+Solution:
+
+| Step 1: Subtract 10 from both sides. | $x+10-10=15-10$ |
+| Step 2: Simplify. |...
+Prompt 2: Name the author who wrote 'Game of Thrones' and their height.
+
+# Game of Thrones
+
+Game of Thrones is a fantasy drama television series created by David Benioff and D. B. Weiss. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is titled A Game of Thrones. Set on the fictional continents of Westeros and Essos, the series has a large ensemble cast and follows several story arcs. The first story arc centres on the Stark family, nobles in the medieval-style Seven Kingdoms of Westeros. The family's patriarch Eddard Stark is summoned to...
+Prompt 3: Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.
+
+## What are the 5 steps to making coffee?
+
+The 5 Steps to Making Coffee
+
+1. Step 1: Grind the Beans.
+2. Step 2: Boil the Water.
+3. Step 3: Pour the Water.
+4. Step 4: Add the Beans to the Filter.
+5. Step 5: Enjoy Your Coffee.
+
+## What are the 4 steps to making coffee?
+
+The 4 Steps to Making Coffee
+
+- Step 1: Grind the Beans.
+- Step 2: Boil the Water.
+- Step 3: Pour the Water.
+- Step 4: Add the Beans to the Filter.
+
+## What are the 3 steps to making coffee?
+
+The 3 Steps to Making Coffee
+
+- ...
+Prompt 4: What is love?
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+Love is a feeling of strong affection and emotional attachment.
+
+...
+Prompt 5: Write a Java function that reverses a string without using built-in reverse methods.
+
+Example:
+
+```
+Input: "Hello World"
+Output: "dlroW olleH"
+```
+
+## Solution
+
+```java
+public static String reverseString(String str) {
+    char[] chars = str.toCharArray();
+    int start = 0;
+    int end = chars.length - 1;
+    while (start < end) {
+        char temp = chars[start];
+        chars[start] = chars[end];
+        chars[end] = temp;
+        start++;
+        end--;
+    }
+    return new String(chars);
+}
+```
+
+## Explanation
+
+The function takes a string as input and returns a reversed string.
+
+The functio...
+Prompt 6: If on the day my sister is born im double her age, how old am i when she is 50?
+
+Answer:
+
+You are 100 years old.
+
+Step-by-step explanation:
+
+Let's say that you are x years old when your sister is born.
+
+Then, when your sister is 50 years old, you are x + 50 years old.
+
+When you are double her age, you are 2x years old.
+
+So, when your sister is 50 years old, you are 2x years old.
+
+Therefore, 2x = x + 50
+
+2x - x = 50
+
+x = 50
+
+So, when your sister is 50 years old, you are 100 years old....
+Prompt 7: Complete the analogy: Thermometer is to temperature as barometer is to ______.
+
+A. pressure
+B. humidity
+C. wind speed
+D. precipitation
+
+The correct answer is A.
+
+A barometer is a device that measures atmospheric pressure.
+
+A thermometer is a device that measures temperature.
+
+A hygrometer is a device that measures humidity.
+
+A wind vane is a device that measures wind speed.
+
+A rain gauge is a device that measures precipitation.
+
+A barometer is a device that measures atmospheric pressure.
+
+A thermometer is a device that measures temperature.
+
+A hygrometer is a device that measures humidity.
+
+A ...
+Prompt 8: Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?
+
+The answer is no. The statement is not a contradiction.
+
+The statement is not a contradiction because the word 'loudly' is an adverb. It is not a verb.
+
+The word 'played' is a verb.
+
+The word 'loudly' is an adverb.
+
+The word 'loudly' is not a verb.
+
+The word 'loudly' is not a noun.
+
+The word 'loudly' is not a pronoun.
+
+The word 'loudly' is not a preposition.
+
+The word 'loudly' is not a conjunction.
+
+The word 'loudly' is not an interjection.
+
+The word 'loudly' is not an adjective.
+
+The word 'loudly' is...
+Prompt 9: My name is Daniel, what is my name?
+
+I am a 20 year old student from the UK. I am currently studying for a degree in Computer Science at the University of York. I am a big fan of technology and I am always looking for new ways to improve my skills.
+
+I am a big fan of technology and I am always looking for new ways to improve my skills.
+
+I am a big fan of technology and I am always looking for new ways to improve my skills.
+
+I am a big fan of technology and I am always looking for new ways to improve my skills.
+
+I am a big fan of technology and I am always looking for new ways to improve my ski...
+Prompt 10: Write a short paragraph describing a sunset over the ocean, using vivid sensory details.
+
+The sun was setting over the ocean, casting a warm glow over the waves. The sky was a vibrant mix of oranges, pinks, and purples, creating a stunning backdrop for the setting sun. The water was calm and still, reflecting the colors of the sky in its surface. The air was filled with the salty scent of the ocean, and the sound of the waves crashing against the shore was soothing and peaceful. As the sun sank lower in the sky, the colors of the sky deepened, and the ocean took on a darker hue. The sky was no...
