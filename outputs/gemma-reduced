@@ -1,0 +1,49 @@
+Prompt 1: Mathematical Reasoning
+16-bit: "101" ✗ (Math error: 120+12-13=101? Should be 119)
+8-bit: "101" ✗ (Same math error)
+4-bit: "101" ✗ (Same error, with contradictory explanation: says 120+12-13=107 then claims 101)
+
+Prompt 2: Factual Knowledge
+16-bit: Correct author (George R.R. Martin) but wrong height (6'0" instead of 5'10") ✗
+8-bit: Same error - wrong height ✗
+4-bit: Same error - wrong height ✗
+
+Prompt 3: Logical Sequencing
+16-bit: Wrong order! ✗ (Add beans to filter → Grind beans → Boil water → Pour water)
+8-bit: Same wrong order ✗
+4-bit: Different wrong order ✗ (Boil water → Add beans to filter → Grind beans → Pour water)
+
+Prompt 4: Conceptual Understanding
+16-bit: Excellent detailed explanation of love
+8-bit: Similar excellent explanation, slightly different components
+4-bit: Good explanation but slightly less comprehensive
+
+Prompt 5: Code Generation
+16-bit: Correct Java function but incomplete (missing return statement) ✓
+8-bit: Same correct but incomplete function ✓
+4-bit: Only provided function signature, no implementation ✗
+
+Prompt 6: Mathematical Logic
+16-bit: Correct answer (100) but repetitive and poor explanation ✓
+8-bit: Same correct answer with same repetition ✓
+4-bit: Wrong! ✗ Confused reasoning, no clear answer
+
+Prompt 7: Analogical Reasoning
+16-bit: Correct answer (pressure) ✓
+8-bit: Correct answer ✓
+4-bit: Correct answer ✓
+
+Prompt 8: Contradiction Detection
+16-bit: Wrong! ✗ (Says no contradiction, calls it a "paradox")
+8-bit: Wrong! ✗ (Same error - says no contradiction)
+4-bit: Correct! ✓ (Identifies the contradiction properly)
+
+Prompt 9: Simple Recall
+16-bit: Perfect! ✓ ("Daniel")
+8-bit: Perfect! ✓ ("Daniel")
+4-bit: Perfect! ✓ ("Daniel")
+
+Prompt 10: Creative Writing
+16-bit: Excellent sensory details (sight, sound, smell)
+8-bit: Excellent sensory details, slightly more descriptive
+4-bit: Excellent sensory details, comparable quality

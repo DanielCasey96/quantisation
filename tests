@@ -1,69 +1,10 @@
-1. Mathematical Reasoning (Tests precision)
-text
-
-"Solve step by step: (15 × 8) + (72 ÷ 6) - 13 ="
-
-Expectation: Lower precision may cause arithmetic errors in multi-step calculations.
-
-2. Contextual Knowledge (Tests factual recall)
-text
-
-"Name the author who wrote 'One Hundred Years of Solitude' and their country of origin."
-
-Expectation: Aggressive quantization might blur specific factual details.
-
-3. Logical Sequencing (Tests step-by-step reasoning)
-text
-
-"Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter."
-
-Expectation: Lower bits may struggle with logical ordering.
-
-4. Synonyms and Nuance (Tests vocabulary precision)
-text
-
-"Explain the subtle difference between 'happy,' 'joyful,' and 'ecstatic' with examples."
-
-Expectation: Quantization may flatten nuanced distinctions.
-
-5. Code Generation (Tests structured output)
-text
-
-"Write a Python function that reverses a string without using built-in reverse methods."
-
-Expectation: Syntax errors may increase with lower precision.
-
-6. Temporal Reasoning (Tests date/logic)
-text
-
-"If today is March 15, 2024, what day of the week will April 10, 2024 be?"
-
-Expectation: Calendar calculations require precise intermediate steps.
-
-7. Analogies (Tests relational understanding)
-text
-
-"Complete the analogy: Thermometer is to temperature as barometer is to ______."
-
-Expectation: Analogical reasoning degrades with precision loss.
-
-8. Contradiction Detection (Tests logical consistency)
-text
-
-"Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?"
-
-Expectation: Lower bits may miss subtle contradictions.
-
-9. Multi-hop Reasoning (Tests chained logic)
-text
-
-"If all humans are mortal, and Socrates is human, what can we conclude about Socrates?"
-
-Expectation: Chain reasoning requires maintaining intermediate conclusions.
-
-10. Creative Writing (Tests language quality)
-text
-
+"Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 =",
+"Name the author who wrote 'Game of Thrones' and their height.",
+"Arrange these steps in order for making coffee: Grind beans, Boil water, Pour water, Add beans to filter.",
+"What is love?",
+"Write a Java function that reverses a string without using built-in reverse methods.",
+"If on the day my sister is born im double her age, how old am i when she is 50?",
+"Complete the analogy: Thermometer is to temperature as barometer is to ______.",
+"Does this statement contain a contradiction: 'The silent orchestra played loudly all night'?",
+"My name is Daniel, what is my name?",
 "Write a short paragraph describing a sunset over the ocean, using vivid sensory details."
-
-Expectation: Writing quality and vocabulary richness may degrade.

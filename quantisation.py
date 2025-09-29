@@ -9,7 +9,7 @@ def check_cuda():
         print(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
 
 def load_model_quantized(model_path, quantization_level="none"):
-    print(f"Loading model with {quantization_level} quantization...")
+    print(f"Loading model with {quantization_level} quantization")
 
     use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     dtype = torch.bfloat16 if use_bf16 else torch.float16
@@ -48,7 +48,7 @@ def test_memory_usage(model, model_name):
         print("CUDA not available - running on CPU")
     return memory_allocated
 
-def test_simple_inference(model, tokenizer):
+def model_setup(model, tokenizer):
     tokenizer.pad_token = tokenizer.eos_token
     prompts = [
         "Solve this problem with a single number output: (15 × 8) + (72 ÷ 6) - 13 =",
@@ -82,7 +82,7 @@ def test_simple_inference(model, tokenizer):
     return responses
 
 if __name__ == "__main__":
-    model_path = "models/mistral-7b"
+    model_path = "models/llama2-7b-chat"
 
     print("System Check")
     check_cuda()
@@ -96,11 +96,11 @@ if __name__ == "__main__":
                 torch.cuda.empty_cache()
 
             model = load_model_quantized(model_path, quant_level)
-            memory_used = test_memory_usage(model, f"Mistral-7B ({quant_level})")
+            memory_used = test_memory_usage(model, f"llama2-7b-chat ({quant_level})")
 
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
 
-            responses = test_simple_inference(model, tokenizer)
+            responses = model_setup(model, tokenizer)
             print(f"Generated {len(responses)} responses")
 
             if responses:
